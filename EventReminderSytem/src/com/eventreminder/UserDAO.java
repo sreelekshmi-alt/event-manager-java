@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 
 public class UserDAO {
 
-    public void addUser(User user) {
+    public boolean addUser(User user) {
         try {
             Connection con = DBConnection.getConnection();
 
@@ -39,6 +39,7 @@ public class UserDAO {
         } catch(Exception e) {
             e.printStackTrace();
         }
+		return false;
     }
 
     public void showAllUsers() {
